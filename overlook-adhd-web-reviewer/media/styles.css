@@ -1,0 +1,66 @@
+.line {
+    margin-left: 0.1em;
+    font-size: 1em;
+}
+
+input[type="checkbox"] {
+    accent-color: rgba(0, 131, 63, 1);
+    margin: 0.2em;
+}
+
+button {
+    background-color: rgba(13, 72, 190, 0.88);
+    color: rgb(240, 240, 240);
+    border: 1px solid rgba(1, 1, 1, 0.5);
+    margin: 2pt 5pt;
+    padding: 5pt 10pt;
+}
+
+button:hover {
+    background-color: rgba(44, 99, 210, 1);
+}
+
+.suggestion h3 {
+    margin: 1em 0 0.5em;
+}
+
+.suggestion div {
+    margin: 0.5em 0;
+}
+
+.result h4 {
+    margin: 0.5em 0;
+}
+
+.result ul {
+    margin: 1pt;
+}
+
+.result li {
+    font-family: monospace;
+    font-size: 0.7em;
+}
+
+.result .browsers {
+    margin: 1em 0;
+}
+
+.result .browsers table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.result .browsers td {
+    text-align: center;
+    padding: 2pt 4pt;
+    vertical-align: middle;
+}
+
+.result .browsers img {
+    vertical-align: middle;
+}
+
+.result .browsers th {
+    text-align: left;
+    font-weight: 600;
+}
