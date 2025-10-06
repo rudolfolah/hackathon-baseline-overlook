@@ -8,15 +8,12 @@ import { Scanner } from './scanner';
 import { suggestions } from './registry';
 
 function loadWebFeaturesData(context: vscode.ExtensionContext): Object {
-    const jsonPath = path.join(context.extensionPath, 'node_modules', 'web-features', 'data.json');
-    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-    return data;
-}
-
-function debugWebFeatures(context: vscode.ExtensionContext) {
-    const jsonPath = path.join(context.extensionPath, 'node_modules', 'web-features', 'data.json');
-    const data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-    console.log(data);
+    const localPath = path.join(context.extensionPath, 'data.json');
+    if (fs.existsSync(localPath)) {
+        return JSON.parse(fs.readFileSync(localPath, 'utf8'));
+    }
+    const nodeModulesPath = path.join(context.extensionPath, 'node_modules', 'web-features', 'data.json');
+    return JSON.parse(fs.readFileSync(nodeModulesPath, 'utf8'));
 }
 
 // This method is called when your extension is activated
@@ -32,7 +29,7 @@ export function activate(context: vscode.ExtensionContext) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "overlook-adhd-web-reviewer" is now active!');
-    debugWebFeatures(context);
+    console.debug(webFeaturesData);
 
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand

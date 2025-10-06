@@ -44,6 +44,9 @@
     }
   },
   "scripts": {
+    "copy-data": "cp node_modules/web-features/data.json ./data.json",
+    "prebuild": "npm run copy-data",
+    "prepackage": "npm run copy-data",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
